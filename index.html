@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>তপু অ্যান্ড অ্যাসোসিয়েটস | বাড়ির নকশা, প্ল্যান পাশ ও ইঞ্জিনিয়ারিং ক্যালকুলেটর</title>
+    
+    <!-- Google Fonts - Hind Siliguri, Space Grotesk, Major Mono Display & Belleza -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Major+Mono+Display&family=Hind+Siliguri:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for universally recognized action icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlack: '#0D0F12',
+                        brandCharcoal: '#1A1D24',
+                        brandGrayLight: '#F3F4F6',
+                        brandSilver: '#E5E7EB',
+                        brandGreen: '#10B981', // Emerald green for high visibility call buttons
+                        brandGreenDark: '#059669',
+                    },
+                    fontFamily: {
+                        sans: ['Hind Siliguri', 'sans-serif'],
+                        tech: ['Space Grotesk', 'sans-serif'],
+                        logo: ['"Major Mono Display"', 'monospace'],
+                        slogan: ['"Belleza"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Pulse effect for the main phone call button so it catches the eye instantly */
+        .pulse-btn {
+            animation: pulse-animation 2s infinite;
+        }
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        /* Custom scrollbar for minimalist clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F3F4F6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #10B981;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-white text-brandBlack font-sans antialiased selection:bg-brandBlack selection:text-white overflow-x-hidden">
+
+    <!-- Super Simple Header with Instant Green Call Button -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50 border-b border-brandSilver">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <!-- Brand Logo with Major Mono Display & Belleza Slogan -->
+            <a href="#hero" class="flex items-center space-x-2">
+                <div class="w-12 h-12 bg-brandBlack rounded flex items-center justify-center text-white font-normal text-lg font-logo uppercase">
+                    t&a
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xs sm:text-sm font-normal tracking-tight text-brandBlack uppercase font-logo leading-none">topu & associates</span>
+                    <span class="text-[8px] sm:text-[10px] tracking-wider text-brandGreen font-bold mt-1 font-slogan">Engineering Drawings & Approval Solutions</span>
+                </div>
+            </a>
+
+            <!-- Quick Action Call Button - Green & Large for instant phone call -->
+            <a href="tel:+8801766315151" class="pulse-btn bg-brandGreen text-white px-4 py-2.5 rounded-full flex items-center space-x-2 text-sm font-bold hover:bg-brandGreenDark transition-all shadow-lg">
+                <i class="fa-solid fa-phone animate-bounce"></i>
+                <span>সরাসরি কল দিন</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Simplified Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center bg-brandGrayLight pt-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 w-full py-12 relative z-10">
+            <div class="max-w-4xl mx-auto text-center space-y-8">
+                
+                <!-- Main Simple Bold Text -->
+                <div class="space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-white px-3 py-1.5 rounded-full border border-brandSilver mx-auto">
+                        <span class="w-3 h-3 bg-brandGreen rounded-full animate-ping"></span>
+                        <span class="text-xs font-bold text-brandBlack">আমরা এখন নরসিংদীতে আছি</span>
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-6xl font-extrabold text-brandBlack leading-[1.3]">
+                        নিখুঁত ড্রয়িং, নিরাপদ ডিজাইন <br>
+                        <span class="text-brandGreen">এবং ঝামেলাহীনভাবে বাড়ির প্ল্যান পাশ করুন</span>
+                    </h1>
+                    
+                    <p class="text-base sm:text-xl text-gray-700 font-normal leading-relaxed max-w-2xl mx-auto">
+                        পৌরসভা ও রাজউক থেকে বাড়ির প্ল্যান পাশ, রড-সিমেন্টের নিখুঁত ডিজাইন, মাটি পরীক্ষা এবং ডিজিটাল পদ্ধতিতে জমি পরিমাপের সম্পূর্ণ সমাধান—এক ছাদের নিচে।
+                    </p>
+
+                    <!-- Giant Interactive Actions for easy click -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+                        <a href="tel:+8801766315151" class="inline-flex justify-center items-center bg-brandGreen text-white font-bold text-lg px-8 py-5 rounded-xl hover:bg-brandGreenDark transition-all duration-300 shadow-xl group">
+                            <i class="fa-solid fa-phone-volume mr-3 text-2xl"></i>
+                            এখানে টিপে কল করুন
+                        </a>
+                        <a href="#calculators" class="inline-flex justify-center items-center bg-white text-brandBlack border-2 border-brandBlack font-bold text-base px-8 py-5 rounded-xl hover:bg-brandGrayLight transition-all duration-300 shadow-md">
+                            <i class="fa-solid fa-calculator mr-3 text-xl text-brandGreen"></i>
+                            ইঞ্জিনিয়ারিং ক্যালকুলেটর
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section - Extremely Simple & Relatable -->
+    <section id="about" class="py-20 bg-white border-b border-brandSilver">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center space-y-4 mb-12">
+                <span class="text-xs font-bold tracking-widest text-brandGreen uppercase block">// আমাদের পরিচিতি</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-brandBlack">আমাদের সম্পর্কে খুব সহজ ভাষায়</h2>
+                <div class="w-16 h-1 bg-brandGreen mx-auto rounded"></div>
+            </div>
+
+            <div class="bg-brandGrayLight p-6 sm:p-10 rounded-2xl border border-brandSilver shadow-md grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <!-- Bio Photo/Avatar -->
+                <div class="md:col-span-4 flex flex-col items-center">
+                    <div class="w-28 h-28 bg-brandBlack rounded-full flex items-center justify-center text-white border-4 border-brandGreen shadow-lg mb-4">
+                        <i class="fa-solid fa-user-tie text-5xl"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brandBlack text-center">রাকিবুল ইসলাম তপু</h3>
+                    <p class="text-xs text-brandGreen font-bold uppercase tracking-wider mt-1">প্রধান সিভিল ইঞ্জিনিয়ার</p>
+                </div>
+
+                <!-- Easy Explanation -->
+                <div class="md:col-span-8 space-y-4 text-gray-700">
+                    <p class="text-sm sm:text-base leading-relaxed">
+                        আমি **রাকিবুল ইসলাম তপু**। আমরা নরসিংদীতে বিশ্বস্ততার সাথে বাড়ি তৈরির সব কাজ করি। বাড়ি তৈরির নানা রকম টেকনিক্যাল জটিলতা এবং দৈনন্দিন ব্যস্ততার মাঝে নিজের স্বপ্নের বাড়ির কাজ নিখুঁতভাবে তদারকি করা যেকোনো সাধারণ মানুষের জন্যই বেশ কঠিন। তাই আমরা শুরু থেকে শেষ পর্যন্ত আপনার পাশে থেকে সম্পূর্ণ দায়িত্ব নিয়ে বাড়ির নিরাপদ ডিজাইন ও নকশা পাশ করিয়ে দেব।
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="bg-white p-3 rounded-xl border border-brandSilver flex items-center space-x-2">
+                            <i class="fa-solid fa-user-shield text-brandGreen text-lg"></i>
+                            <span class="text-xs font-bold">সরাসরি ইঞ্জিনিয়ারের তদারকি</span>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-brandSilver flex items-center space-x-2">
+                            <i class="fa-solid fa-users text-brandGreen text-lg"></i>
+                            <span class="text-xs font-bold">দক্ষ ও বিশ্বস্ত টিম</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section - Simple Terms & Big Visual Icons -->
+    <section id="services" class="py-20 bg-brandGrayLight">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest text-brandGreen uppercase block mb-2">// আমরা যে সব কাজ করি</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-brandBlack">আমাদের সেবাসমূহ</h2>
+                <p class="text-xs text-gray-600 mt-2">আপনার বাড়ি সুন্দরভাবে তৈরি করতে আমরা নিচের এই কাজগুলো করে থাকি</p>
+                <div class="w-12 h-1 bg-brandGreen mx-auto mt-4"></div>
+            </div>
+
+            <!-- Services Grid with Very Simple Bengali Names -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-brandSilver shadow hover:shadow-xl transition-all duration-300 flex items-start space-x-4">
+                    <div class="w-14 h-14 bg-brandGreen/10 rounded-xl flex items-center justify-center text-brandGreen shrink-0">
+                        <i class="fa-solid fa-file-signature text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-brandBlack mb-1">১. বাড়ির নকশা পাশ (রাজউক/পৌরসভা)</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            কোনো ঝামেলা ছাড়াই সরকারি নিয়ম মেনে রাজউক বা পৌরসভা থেকে বাড়ির প্ল্যান দ্রুত পাশ করে দেওয়ার দায়িত্ব আমাদের।
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-brandSilver shadow hover:shadow-xl transition-all duration-300 flex items-start space-x-4">
+                    <div class="w-14 h-14 bg-brandGreen/10 rounded-xl flex items-center justify-center text-brandGreen shrink-0">
+                        <i class="fa-solid fa-compass-drafting text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-brandBlack mb-1">২. রড, সিমেন্ট ও ঘরের প্ল্যান ডিজাইন</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            কংক্রিট, রড ও সিমেন্ট ঠিক কতখানি লাগবে তার সঠিক ও নিরাপদ হিসাবসহ সম্পূর্ণ ড্রয়িং তৈরি করা।
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-brandSilver shadow hover:shadow-xl transition-all duration-300 flex items-start space-x-4">
+                    <div class="w-14 h-14 bg-brandGreen/10 rounded-xl flex items-center justify-center text-brandGreen shrink-0">
+                        <i class="fa-solid fa-house-chimney-window text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-brandBlack mb-1">৩. নতুন ও আধুনিক ৩ডি (3D) ডিজাইন</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            বাড়ি তৈরি করার আগেই আপনার বাড়িটি দেখতে কেমন লাগবে, তার সুন্দর রঙিন ত্রিমাত্রিক ছবি তৈরি করে দেওয়া।
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-brandSilver shadow hover:shadow-xl transition-all duration-300 flex items-start space-x-4">
+                    <div class="w-14 h-14 bg-brandGreen/10 rounded-xl flex items-center justify-center text-brandGreen shrink-0">
+                        <i class="fa-solid fa-vial text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-brandBlack mb-1">৪. ডিজিটাল মাটি পরীক্ষা (সয়েল টেস্ট)</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            আপনার জমির মাটি কতখানি লোড নিতে পারবে তা আধুনিক মেশিনে ল্যাব টেস্ট করে সঠিক রিপোর্ট দেওয়া।
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white p-6 rounded-2xl border border-brandSilver shadow hover:shadow-xl transition-all duration-300 flex items-start space-x-4">
+                    <div class="w-14 h-14 bg-brandGreen/10 rounded-xl flex items-center justify-center text-brandGreen shrink-0">
+                        <i class="fa-solid fa-map-location-dot text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-brandBlack mb-1">৫. ডিজিটাল জমি পরিমাপ (সার্ভে)</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            টোটাল স্টেশন ও ডিজিটাল পদ্ধতিতে একদম নিখুঁতভাবে জমির সীমানা ও ম্যাপ তৈরি করে দেওয়া।
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white p-6 rounded-2xl border border-brandSilver shadow hover:shadow-xl transition-all duration-300 flex items-start space-x-4">
+                    <div class="w-14 h-14 bg-brandGreen/10 rounded-xl flex items-center justify-center text-brandGreen shrink-0">
+                        <i class="fa-solid fa-user-gear text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-brandBlack mb-1">৬. কাজের তদারকি ও সাইট সুপারভিশন</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            মিস্ত্রিরা রড ঠিকমত বাঁধছে কিনা বা ঢালাই ভালো হচ্ছে কিনা তা আমাদের অভিজ্ঞ ইঞ্জিনিয়ার দিয়ে পাহারা দেওয়া।
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: 4 Easy Steps Workflow (Highly Visual for Common People) -->
+    <section id="how-we-work" class="py-20 bg-white border-t border-brandSilver">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest text-brandGreen uppercase block mb-2">// খুব সহজ নিয়ম</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-brandBlack">আপনার বাড়ির কাজ যেভাবে শুরু হবে</h2>
+                <p class="text-sm text-gray-600 mt-2">কোনো ঝামেলা ছাড়াই মাত্র ৪টি ধাপে আমরা আপনার স্বপ্নের বাড়িটি শুরু করব</p>
+                <div class="w-12 h-1 bg-brandGreen mx-auto mt-4"></div>
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                
+                <!-- Step 1 -->
+                <div class="bg-brandGrayLight p-6 rounded-2xl border border-brandSilver text-center relative group">
+                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-brandBlack text-white rounded-full flex items-center justify-center font-extrabold text-xl font-tech border-4 border-white shadow-lg">
+                        ১
+                    </div>
+                    <div class="w-16 h-16 bg-brandGreen/10 rounded-full flex items-center justify-center text-brandGreen mx-auto mt-4 mb-4">
+                        <i class="fa-solid fa-map-location text-2xl"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brandBlack mb-2">জমি মেপে সীমানা নির্ধারণ</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        প্রথমে আমরা আধুনিক মেশিন দিয়ে আপনার জমি নিখুঁতভাবে মেপে সীমানা বুঝিয়ে দেব যাতে প্রতিবেশীর সাথে ভবিষ্যতে কোনো ঝগড়া না হয়।
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-brandGrayLight p-6 rounded-2xl border border-brandSilver text-center relative group">
+                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-brandBlack text-white rounded-full flex items-center justify-center font-extrabold text-xl font-tech border-4 border-white shadow-lg">
+                        ২
+                    </div>
+                    <div class="w-16 h-16 bg-brandGreen/10 rounded-full flex items-center justify-center text-brandGreen mx-auto mt-4 mb-4">
+                        <i class="fa-solid fa-vial-virus text-2xl"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brandBlack mb-2">মাটি পরীক্ষা ও প্ল্যান পাশ</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        ল্যাবে মাটি পরীক্ষা করে লোড নেওয়ার ক্ষমতা দেখব এবং সরকারি পৌরসভা বা রাজউক থেকে বাড়ির প্ল্যান পাশের সব কাগজ আমরাই তৈরি করে দেব।
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-brandGrayLight p-6 rounded-2xl border border-brandSilver text-center relative group">
+                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-brandBlack text-white rounded-full flex items-center justify-center font-extrabold text-xl font-tech border-4 border-white shadow-lg">
+                        ৩
+                    </div>
+                    <div class="w-16 h-16 bg-brandGreen/10 rounded-full flex items-center justify-center text-brandGreen mx-auto mt-4 mb-4">
+                        <i class="fa-solid fa-pencil-ruler text-2xl"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brandBlack mb-2">বাড়ির ড্রয়িং ও নকশা তৈরি</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        আপনার পছন্দ অনুযায়ী রড-সিমেন্টের সঠিক হিসাব এবং দরজা-জানলাসহ সম্পূর্ণ সুন্দর ডিজিটাল থ্রিডি নকশা আমরা তৈরি করব।
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-brandGrayLight p-6 rounded-2xl border border-brandSilver text-center relative group">
+                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-brandGreen text-white rounded-full flex items-center justify-center font-extrabold text-xl font-tech border-4 border-white shadow-lg">
+                        ৪
+                    </div>
+                    <div class="w-16 h-16 bg-brandGreen/10 rounded-full flex items-center justify-center text-brandGreen mx-auto mt-4 mb-4">
+                        <i class="fa-solid fa-hard-hat text-2xl"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brandBlack mb-2">ইঞ্জিনিয়ারের পাহারায় কাজ শুরু</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        বাড়ি তৈরির কাজ শুরু হলে মিস্ত্রিরা রড ঠিকমত বাঁধছে কিনা এবং ঢালাই ঠিকমত দিচ্ছে কিনা তা আমাদের ইঞ্জিনিয়ার এসে নিজে দেখে যাবেন।
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Interactive FAQ (Highly Relevant for Less-Educated/Anxious Clients) -->
+    <section id="faq" class="py-20 bg-brandGrayLight border-t border-brandSilver">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold tracking-widest text-brandGreen uppercase block mb-2">// মনের সাধারণ প্রশ্নসমূহ</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-brandBlack">কিছু জরুরি প্রশ্ন ও সহজ উত্তর</h2>
+                <p class="text-xs text-gray-600 mt-2">অনেকের মনেই বাড়ি বানানোর আগে নানা ভয় থাকে, নিচে তার সমাধান দেওয়া হলো</p>
+                <div class="w-12 h-1 bg-brandGreen mx-auto mt-4"></div>
+            </div>
+
+            <!-- FAQ Accordion List -->
+            <div class="space-y-4">
+                
+                <!-- Q1 -->
+                <div class="bg-white border border-brandSilver rounded-xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFAQ(1)" class="w-full p-5 flex items-center justify-between text-left font-bold text-sm sm:text-base text-brandBlack hover:bg-gray-50 focus:outline-none">
+                        <span class="flex items-center space-x-3 text-left">
+                            <i class="fa-solid fa-circle-question text-brandGreen text-lg shrink-0"></i>
+                            <span>১. বাড়ির নকশা সরকারি অনুমোদন (প্ল্যান পাশ) না করালে কী সমস্যা হতে পারে?</span>
+                        </span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-ans-1" class="hidden p-5 border-t border-brandSilver text-xs sm:text-sm text-gray-700 leading-relaxed bg-brandGrayLight/50">
+                        অনুমোদন ছাড়া বাড়ি তৈরি করলে পরবর্তীতে সরকারি সংস্থা জরিমানা করতে পারে বা বাড়ি ভাঙার নির্দেশ দিতে পারে। এছাড়া নকশা পাশ না থাকলে ব্যাংকের কোনো হোম লোন নেওয়া যায় না এবং বিদ্যুৎ-গ্যাস সংযোগ পেতে চরম সমস্যা হয়। তাই প্রথমেই প্ল্যান পাশ করিয়ে নেওয়া বুদ্ধিমানের কাজ।
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="bg-white border border-brandSilver rounded-xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFAQ(2)" class="w-full p-5 flex items-center justify-between text-left font-bold text-sm sm:text-base text-brandBlack hover:bg-gray-50 focus:outline-none">
+                        <span class="flex items-center space-x-3 text-left">
+                            <i class="fa-solid fa-circle-question text-brandGreen text-lg shrink-0"></i>
+                            <span>২. মাটি পরীক্ষা (সয়েল টেস্ট) না করালে কি বাড়ি ভেঙে পড়ার ঝুঁকি থাকে?</span>
+                        </span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-ans-2" class="hidden p-5 border-t border-brandSilver text-xs sm:text-sm text-gray-700 leading-relaxed bg-brandGrayLight/50">
+                        হ্যাঁ, অবশ্যই। অনেক সময় মাটির নিচে নরম কাদা বা ফাপা অংশ থাকে যা বাইরে থেকে দেখা যায় না। সয়েল টেস্ট না করে বড় বাড়ি বানালে কয়েক বছর পর দেয়াল বা বিমে ফাটল দেখা দিতে পারে, এমনকী বিল্ডিং একদিকে হেলে পড়তে পারে। আপনার কোটি টাকার বাড়িকে শতভাগ নিরাপদ রাখতে মাটি পরীক্ষা করা বাধ্যতামূলক।
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="bg-white border border-brandSilver rounded-xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFAQ(3)" class="w-full p-5 flex items-center justify-between text-left font-bold text-sm sm:text-base text-brandBlack hover:bg-gray-50 focus:outline-none">
+                        <span class="flex items-center space-x-3 text-left">
+                            <i class="fa-solid fa-circle-question text-brandGreen text-lg shrink-0"></i>
+                            <span>৩. ইঞ্জিনিয়ার দিয়ে বাড়ি বানালে কি খরচ অনেক বেশি বেড়ে যায়?</span>
+                        </span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-ans-3" class="hidden p-5 border-t border-brandSilver text-xs sm:text-sm text-gray-700 leading-relaxed bg-brandGrayLight/50">
+                        একেবারেই না, বরং খরচ অনেক বেঁচে যায়! সাধারণ মিস্ত্রিরা আন্দাজে অতিরিক্ত রড বা সিমেন্ট ব্যবহার করে আপনার টাকা অপচয় করে, অথবা ভুল জায়গায় রড কম দিয়ে বাড়ি ঝুঁকিপূর্ণ করে ফেলে। একজন ইঞ্জিনিয়ার নিখুঁত হিসাব করে দেন যাতে এক ইঞ্চি রড বা এক কোদাল বালুও নষ্ট না হয়। এতে আপনার লাখ লাখ টাকা সাশ্রয় হয়।
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Dynamic Engineering Calculators (Replacing Estimator) -->
+    <section id="calculators" class="py-20 bg-white border-t border-brandSilver">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold tracking-widest text-brandGreen uppercase block">// সহজ ইঞ্জিনিয়ারিং টুলস</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-brandBlack">প্রয়োজনীয় ৪টি ব্যাসিক ক্যালকুলেটর</h2>
+                <p class="text-sm text-gray-600 mt-2">আপনার বাড়ি বা কাজের প্রয়োজনীয় হিসাবগুলো কোনো রকম জটিলতা ছাড়াই সহজে করে নিন।</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button onclick="switchTab('concrete-mix')" id="tab-btn-concrete-mix" class="tab-btn active bg-brandBlack text-white px-5 py-3 rounded-xl font-bold text-sm transition-all flex items-center space-x-2">
+                    <i class="fa-solid fa-cubes"></i>
+                    <span>কংক্রিট মিক্স এস্টিমেটর</span>
+                </button>
+                <button onclick="switchTab('soil-foundation')" id="tab-btn-soil-foundation" class="tab-btn bg-brandGrayLight text-brandBlack hover:bg-brandSilver px-5 py-3 rounded-xl font-bold text-sm transition-all flex items-center space-x-2">
+                    <i class="fa-solid fa-trowel-bricks"></i>
+                    <span>সয়েল টেস্ট ও ফাউন্ডেশন</span>
+                </button>
+                <button onclick="switchTab('slab-reinforcement')" id="tab-btn-slab-reinforcement" class="tab-btn bg-brandGrayLight text-brandBlack hover:bg-brandSilver px-5 py-3 rounded-xl font-bold text-sm transition-all flex items-center space-x-2">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                    <span>স্লাব রিইনফোর্সমেন্ট (রড)</span>
+                </button>
+                <button onclick="switchTab('lift-stair')" id="tab-btn-lift-stair" class="tab-btn bg-brandGrayLight text-brandBlack hover:bg-brandSilver px-5 py-3 rounded-xl font-bold text-sm transition-all flex items-center space-x-2">
+                    <i class="fa-solid fa-stairs"></i>
+                    <span>লিফট ও সিঁড়ি কম্প্লায়েন্স</span>
+                </button>
+            </div>
+
+            <!-- Calculator Workspace Container -->
+            <div class="bg-brandGrayLight border-2 border-brandSilver p-6 sm:p-10 rounded-2xl shadow-xl max-w-4xl mx-auto">
+                
+                <!-- Tab 1: Concrete Mix Estimator -->
+                <div id="tab-concrete-mix" class="tab-content block space-y-6">
+                    <h3 class="text-lg font-bold text-brandBlack border-b border-brandSilver pb-2 flex items-center space-x-2">
+                        <i class="fa-solid fa-cubes text-brandGreen"></i>
+                        <span>১. ঢালাইয়ের মালামাল হিসাব (সিমেন্ট, বালু ও খোয়া)</span>
+                    </h3>
+                    <p class="text-xs text-gray-600">আপনার ঢালাইয়ের মোট দৈর্ঘ্য, প্রস্থ ও উচ্চতা দিয়ে প্রয়োজনীয় সামগ্রীর মোট পরিমাণ বের করুন।</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">দৈর্ঘ্য (ফুট)</label>
+                            <input type="number" id="concreteLength" value="20" class="w-full bg-white border border-brandSilver rounded-lg p-3 text-base font-bold text-brandBlack font-tech" oninput="calculateConcrete()">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">প্রস্থ (ফুট)</label>
+                            <input type="number" id="concreteWidth" value="15" class="w-full bg-white border border-brandSilver rounded-lg p-3 text-base font-bold text-brandBlack font-tech" oninput="calculateConcrete()">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">পুরুত্ব / গভীরতা (ইঞ্চি)</label>
+                            <input type="number" id="concreteThickness" value="5" class="w-full bg-white border border-brandSilver rounded-lg p-3 text-base font-bold text-brandBlack font-tech" oninput="calculateConcrete()">
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-xl border border-brandSilver">
+                        <label class="block text-xs font-bold text-gray-700 mb-2">মিশ্রণের অনুপাত (Cement : Sand : Stone/Brick)</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                            <label class="flex items-center space-x-2 p-2.5 border border-brandSilver rounded-lg cursor-pointer hover:bg-brandGrayLight">
+                                <input type="radio" name="concreteRatio" value="1:1.5:3" checked onchange="calculateConcrete()">
+                                <span class="text-xs font-bold">১ : ১.৫ : ৩ (ছাদ/কলাম)</span>
+                            </label>
+                            <label class="flex items-center space-x-2 p-2.5 border border-brandSilver rounded-lg cursor-pointer hover:bg-brandGrayLight">
+                                <input type="radio" name="concreteRatio" value="1:2:4" onchange="calculateConcrete()">
+                                <span class="text-xs font-bold">১ : ২ : ৪ (ভীভ/ফাউন্ডেশন)</span>
+                            </label>
+                            <label class="flex items-center space-x-2 p-2.5 border border-brandSilver rounded-lg cursor-pointer hover:bg-brandGrayLight">
+                                <input type="radio" name="concreteRatio" value="1:3:6" onchange="calculateConcrete()">
+                                <span class="text-xs font-bold">১ : ৩ : ৬ (লিন্টেল/সিসি)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Output Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                        <div class="bg-brandBlack text-white p-4 rounded-xl text-center">
+                            <span class="text-[10px] uppercase font-bold text-brandGreen">প্রয়োজনীয় সিমেন্ট</span>
+                            <div class="text-2xl font-bold font-tech mt-1" id="outCement">--</div>
+                            <span class="text-xs text-gray-400">বস্তা (Bag)</span>
+                        </div>
+                        <div class="bg-white border border-brandSilver p-4 rounded-xl text-center">
+                            <span class="text-[10px] uppercase font-bold text-brandGreen">প্রয়োজনীয় বালু</span>
+                            <div class="text-2xl font-bold text-brandBlack font-tech mt-1" id="outSand">--</div>
+                            <span class="text-xs text-gray-600">সেফটি (CFT)</span>
+                        </div>
+                        <div class="bg-white border border-brandSilver p-4 rounded-xl text-center">
+                            <span class="text-[10px] uppercase font-bold text-brandGreen">প্রয়োজনীয় খোয়া / পাথর</span>
+                            <div class="text-2xl font-bold text-brandBlack font-tech mt-1" id="outChips">--</div>
+                            <span class="text-xs text-gray-600">সেফটি (CFT)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Soil Test & Foundation -->
+                <div id="tab-soil-foundation" class="tab-content hidden space-y-6">
+                    <h3 class="text-lg font-bold text-brandBlack border-b border-brandSilver pb-2 flex items-center space-x-2">
+                        <i class="fa-solid fa-trowel-bricks text-brandGreen"></i>
+                        <span>২. মাটি পরীক্ষা ও ফাউন্ডেশন বিশ্লেষণ</span>
+                    </h3>
+                    <p class="text-xs text-gray-600">আপনার জমির মাটি এবং কাঙ্ক্ষিত তলার ওপর ভিত্তি করে প্রাথমিকভাবে ফাউন্ডেশনের ধরন বুঝুন।</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Soil Type Selector -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">জমির মাটির ধরন</label>
+                            <select id="soilType" class="w-full bg-white border border-brandSilver rounded-lg p-3 text-sm font-bold text-brandBlack" onchange="calculateSoilFoundation()">
+                                <option value="good">লাল মাটি / শক্ত মাটি (ভালো লোড ক্ষমতা)</option>
+                                <option value="medium">সাধারণ বেলে বা দোঁআশ মাটি (মাঝারি লোড ক্ষমতা)</option>
+                                <option value="bad">খাল/পুকুর ভরাট করা নরম কাদা মাটি (দুর্বল লোড ক্ষমতা)</option>
+                            </select>
+                        </div>
+                        <!-- Building Stories -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">ভবনের তলার সংখ্যা (Stories)</label>
+                            <div class="flex items-center space-x-2">
+                                <button type="button" onclick="adjustStories(-1)" class="w-10 h-10 bg-brandSilver text-brandBlack rounded-lg font-bold text-lg">-</button>
+                                <input type="text" id="soilStories" value="3" class="w-16 text-center bg-white border border-brandSilver rounded-lg p-2 font-bold font-tech" readonly>
+                                <button type="button" onclick="adjustStories(1)" class="w-10 h-10 bg-brandSilver text-brandBlack rounded-lg font-bold text-lg">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Output Results Card -->
+                    <div class="bg-white border border-brandSilver p-5 rounded-xl space-y-4">
+                        <div class="flex items-center justify-between border-b border-brandSilver pb-2">
+                            <span class="text-xs font-bold text-gray-600">আনুমানিক মাটির সহনশীলতা (SST):</span>
+                            <span id="soilSST" class="text-sm font-bold text-brandBlack font-tech">--</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-brandSilver pb-2">
+                            <span class="text-xs font-bold text-gray-600">সুপারিশকৃত ফাউন্ডেশনের ধরন:</span>
+                            <span id="soilFoundationType" class="text-sm font-bold text-brandGreen">--</span>
+                        </div>
+                        <div class="p-3 bg-brandGrayLight rounded-lg text-xs text-gray-700 leading-relaxed" id="soilAdvice">
+                            মাটি পরীক্ষার পূর্বে কোনো স্থায়ী বহুতল ফাউন্ডেশন ডিজাইন করা অত্যন্ত ঝুঁকিপূর্ণ।
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Slab Reinforcement (Steel Weight) -->
+                <div id="tab-slab-reinforcement" class="tab-content hidden space-y-6">
+                    <h3 class="text-lg font-bold text-brandBlack border-b border-brandSilver pb-2 flex items-center space-x-2">
+                        <i class="fa-solid fa-bars-staggered text-brandGreen"></i>
+                        <span>৩. স্লাব রিইনফোর্সমেন্ট (ছাদের রডের হিসাব)</span>
+                    </h3>
+                    <p class="text-xs text-gray-600">আপনার ছাদের মোট স্কয়ার ফুটের মাপ বসিয়ে প্রয়োজনীয় রডের (Steel) একটি নিরাপদ আনুমানিক ওজন বের করুন।</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">ছাদের মোট ক্ষেত্রফল (স্কয়ার ফুট / SFT)</label>
+                            <input type="number" id="slabArea" value="1200" class="w-full bg-white border border-brandSilver rounded-lg p-3 text-base font-bold text-brandBlack font-tech" oninput="calculateSlabRod()">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">রডের অনুপাত (BNBC অনুযায়ী স্লাবের জন্য ১% - ১.২% সাধারণ নিয়ম)</label>
+                            <select id="rodRatio" class="w-full bg-white border border-brandSilver rounded-lg p-3 text-sm font-bold text-brandBlack" onchange="calculateSlabRod()">
+                                <option value="0.01">১% সাধারণ লাইট লোড স্লাব</option>
+                                <option value="0.012" selected>১.২% স্ট্যান্ডার্ড রেসিডেন্সিয়াল স্লাব</option>
+                                <option value="0.015">১.৫% হেভি ডিউটি কমার্শিয়াল স্লাব</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Output Card -->
+                    <div class="bg-brandBlack text-white p-6 rounded-xl flex flex-col items-center justify-center text-center">
+                        <span class="text-xs font-bold uppercase text-brandGreen tracking-wider">আনুমানিক মোট রড প্রয়োজন</span>
+                        <div class="text-3xl sm:text-4xl font-extrabold font-tech mt-2 text-white" id="outRodWeight">--</div>
+                        <span class="text-xs text-gray-400 mt-1">কেজি (KG) [~ <span id="outRodTons">--</span> টন]</span>
+                    </div>
+                </div>
+
+                <!-- Tab 4: Lift & Stair Compliance (BNBC) -->
+                <div id="tab-lift-stair" class="tab-content hidden space-y-6">
+                    <h3 class="text-lg font-bold text-brandBlack border-b border-brandSilver pb-2 flex items-center space-x-2">
+                        <i class="fa-solid fa-stairs text-brandGreen"></i>
+                        <span>৪. লিফট ও সিঁড়ি কম্প্লায়েন্স (BNBC নিয়মাবলী)</span>
+                    </h3>
+                    <p class="text-xs text-gray-600">বাংলাদেশ বিল্ডিং কোড (BNBC) অনুযায়ী আবাসিক ভবনে লিফট ও সিঁড়ির বাধ্যতামূলক মাপসমূহ যাচাই করুন।</p>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">আপনার প্রস্তাবিত ভবনের তলা (তলার সংখ্যা সিলেক্ট করুন)</label>
+                        <select id="bnbcStories" class="w-full bg-white border border-brandSilver rounded-lg p-3 text-sm font-bold text-brandBlack" onchange="calculateBNBC()">
+                            <option value="1">১ থেকে ৩ তলা ভবন</option>
+                            <option value="4">৪ থেকে ৫ তলা ভবন</option>
+                            <option value="6" selected>৬ তলা বা তদুর্ধ্ব বহুতল ভবন</option>
+                        </select>
+                    </div>
+
+                    <!-- BNBC Rules Container -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-xl border border-brandSilver space-y-2">
+                            <span class="text-xs font-bold text-brandGreen block"><i class="fa-solid fa-stairs mr-1"></i> সিঁড়ির মাপ (Stairs Check):</span>
+                            <ul class="text-xs text-gray-700 space-y-1.5 list-disc list-inside" id="bnbcStairRules">
+                                <li>সিঁড়ির নূন্যতম চওড়া হতে হবে ৩ ফুট ৪ ইঞ্চি (১.০ মিটার)।</li>
+                                <li>ধাপের উচ্চতা (Riser) সর্বোচ্চ ৭ ইঞ্চি এবং ধাপের চওড়া (Tread) নূন্যতম ১০ ইঞ্চি হওয়া উচিত।</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-brandSilver space-y-2">
+                            <span class="text-xs font-bold text-brandGreen block"><i class="fa-solid fa-elevator mr-1"></i> লিফট বাধ্যবাধকতা (Lift Requirement):</span>
+                            <p class="text-xs text-gray-700 leading-relaxed" id="bnbcLiftRules">
+                                BNBC কোড অনুযায়ী ৬ তলা বা এর বেশি তলার ভবনে কমপক্ষে ১টি স্ট্যান্ডার্ড লিফট থাকা বাধ্যতামূলক।
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Footnote inside Calculators -->
+                <div class="mt-8 pt-6 border-t border-brandSilver flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div class="text-left">
+                        <h4 class="text-xs font-bold text-brandBlack">সঠিক প্রফেশনাল ড্রয়িং এর প্রয়োজন?</h4>
+                        <p class="text-[10px] text-gray-500">ডিজাইনে কোন প্রকার সন্দেহ থাকলে সরাসরি আমাদের সাহায্য নিতে পারেন।</p>
+                    </div>
+                    <a href="tel:+8801766315151" class="bg-brandGreen text-white px-5 py-3 rounded-xl text-xs font-bold hover:bg-brandGreenDark transition-all flex items-center space-x-2 shadow-md">
+                        <i class="fa-solid fa-phone-volume animate-pulse"></i>
+                        <span>ইঞ্জিনিয়ারের সাথে কথা বলুন</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Portfolio Section - Exactly 3 Projects -->
+    <section id="portfolio" class="py-20 bg-brandGrayLight">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest text-brandGreen uppercase block mb-2">// আমাদের করা কাজ</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-brandBlack">বাস্তব কাজের ছবি</h2>
+                <p class="text-xs text-gray-600 mt-2">আমাদের করা ৩টি উল্লেখযোগ্য এবং চমৎকার প্রজেক্টের ছবি নিচে দেখুন</p>
+                <div class="w-12 h-1 bg-brandGreen mx-auto mt-4"></div>
+            </div>
+
+            <!-- 3 Projects Only -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                
+                <!-- Project 1 -->
+                <div class="bg-white rounded-2xl border border-brandSilver overflow-hidden shadow hover:shadow-lg transition-all group">
+                    <div class="aspect-[4/3] overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" 
+                             alt="6-Story Residential Tower" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                             onerror="this.src='https://placehold.co/800x600/1A1D24/FFFFFF?text=6-Story+Tower'">
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <span class="text-[10px] text-brandGreen font-bold uppercase">নরসিংদী // আবাসিক ভবন</span>
+                        <h4 class="text-base font-bold text-brandBlack">৬ তলা বিল্ডিংয়ের ডিজাইন</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">সম্পূর্ণ ভূমিকম্প সহনশীল আধুনিক ৬ তলা আবাসিক বাড়ির সুন্দর নকশা ও তদারকি করা হয়েছে।</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-2xl border border-brandSilver overflow-hidden shadow hover:shadow-lg transition-all group">
+                    <div class="aspect-[4/3] overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" 
+                             alt="Commercial Complex" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                             onerror="this.src='https://placehold.co/800x600/1A1D24/FFFFFF?text=Commercial+Tower'">
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <span class="text-[10px] text-brandGreen font-bold uppercase">মাধবদী // বাণিজ্যিক কমপ্লেক্স</span>
+                        <h4 class="text-base font-bold text-brandBlack">আধুনিক মার্কেট ও কমার্শিয়াল ডিজাইন</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">সহজে ও নিখুঁত পদ্ধতিতে মার্কেট ড্রয়িং তৈরি করে সরকারি অনুমোদনের জন্য প্রস্তুত করা হয়েছে।</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white rounded-2xl border border-brandSilver overflow-hidden shadow hover:shadow-lg transition-all group">
+                    <div class="aspect-[4/3] overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" 
+                             alt="Structural Blueprints" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                             onerror="this.src='https://placehold.co/800x600/1A1D24/FFFFFF?text=Blueprints+Set'">
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <span class="text-[10px] text-brandGreen font-bold uppercase">নরসিংদী সদর // ডিজিটাল প্ল্যানিং</span>
+                        <h4 class="text-base font-bold text-brandBlack">নিখুঁত সীমানা ম্যাপ ও বাউন্ডারি</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">ডিজিটাল ম্যাপ সহ বাড়ির রাজউক ও পৌরসভা সাবমিশনের সম্পূর্ণ কাগজপত্র তৈরি কাজ।</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Behance Redirection CTA -->
+            <div class="text-center mt-12">
+                <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center bg-brandBlack text-white font-bold text-xs tracking-wider uppercase px-8 py-4 rounded-xl hover:bg-brandCharcoal transition-all shadow-md group">
+                    ইন্টারনেটে আরও কাজ দেখুন (BEHANCE) <i class="fa-solid fa-arrow-up-right-from-square ml-3 text-[10px] transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Core Section - Big Visual Action Buttons -->
+    <section id="contact" class="py-20 bg-white border-t border-brandSilver">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            
+            <div class="space-y-4 mb-12">
+                <span class="text-xs font-bold tracking-widest text-brandGreen uppercase block">// সরাসরি কথা বলুন</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-brandBlack">যোগাযোগের খুব সহজ ঠিকানা</h2>
+                <p class="text-sm text-gray-600 max-w-lg mx-auto">
+                    আমাদের অফিসে আসার প্রয়োজন নেই, আপনি সরাসরি ফোনে অথবা হোয়াটসঅ্যাপে একটি বাটন টিপেই আমাদের সাথে ফ্রিতে কথা বলতে পারবেন।
+                </p>
+            </div>
+
+            <!-- Highly Visual Touch Targets for Direct Actions -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                
+                <!-- Instant Green Call Card -->
+                <a href="tel:+8801766315151" class="bg-emerald-50 hover:bg-emerald-100 border-2 border-brandGreen p-6 rounded-2xl shadow-md flex flex-col justify-between min-h-[180px] transition-all group">
+                    <div class="w-12 h-12 bg-brandGreen text-white flex items-center justify-center rounded-full shadow-md">
+                        <i class="fa-solid fa-phone-volume text-xl animate-pulse"></i>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="text-xs font-bold text-brandGreen uppercase">// সরাসরি ফোন দিন</h4>
+                        <p class="text-xl font-bold text-brandBlack mt-1 font-tech">+৮৮০ ১৭৬৬ ৩১৫১৫১</p>
+                        <p class="text-[11px] text-gray-600 mt-1">সবুজ বাটনটি টিপলে সরাসরি কল যাবে।</p>
+                    </div>
+                </a>
+
+                <!-- Instant WhatsApp Card -->
+                <a href="https://wa.me/8801766315151" target="_blank" rel="noopener noreferrer" class="bg-green-50 hover:bg-green-100 border-2 border-green-500 p-6 rounded-2xl shadow-md flex flex-col justify-between min-h-[180px] transition-all group">
+                    <div class="w-12 h-12 bg-green-500 text-white flex items-center justify-center rounded-full shadow-md">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="text-xs font-bold text-green-600 uppercase">// হোয়াটসঅ্যাপে ছবি পাঠান</h4>
+                        <p class="text-base font-bold text-brandBlack mt-1">হোয়াটসঅ্যাপ চ্যাট চালু করুন</p>
+                        <p class="text-[11px] text-gray-600 mt-1">আপনার জমির দলিলের বা বাড়ির ছবি পাঠাতে পারেন।</p>
+                    </div>
+                </a>
+
+                <!-- Location Map Card -->
+                <div class="bg-gray-50 border-2 border-brandSilver p-6 rounded-2xl shadow-md flex flex-col justify-between min-h-[180px]">
+                    <div class="w-12 h-12 bg-brandBlack text-white flex items-center justify-center rounded-full shadow-md">
+                        <i class="fa-solid fa-map-location-dot text-xl"></i>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="text-xs font-bold text-gray-700 uppercase">// অফিসের ঠিকানা</h4>
+                        <p class="text-xs text-brandBlack mt-1 font-semibold leading-relaxed">
+                            টেক্সটাইল ইঞ্জিনিয়ারিং কলেজের বিপরীতে, সাহেপ্রতাপ, নরসিংদী।
+                        </p>
+                        <p class="text-[10px] text-gray-500 mt-1">নরসিংদী সাহেপ্রতাপ মোড়ের কাছেই আমাদের অফিস।</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-20 pt-8 border-t border-brandSilver flex flex-col md:flex-row justify-between items-center text-[10px] tracking-wider text-gray-500 font-semibold">
+                <div class="mb-4 md:mb-0">
+                    © ২০২৬ তপু অ্যান্ড অ্যাসোসিয়েটস। সর্বস্বত্ব সংরক্ষিত।
+                </div>
+                <div class="flex space-x-4 font-bold text-brandBlack">
+                    <a href="#about" class="hover:underline">পরিচিতি</a>
+                    <a href="#services" class="hover:underline">সেবা</a>
+                    <a href="#calculators" class="hover:underline">ইঞ্জিনিয়ারিং ক্যালকুলেটর</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW FEATURE: FLOATING CONTACT BUTTONS (For elderly/less-literate users who love direct calling & whatsapp) -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col space-y-3">
+        <!-- Floating WhatsApp -->
+        <a href="https://wa.me/8801766315151" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 duration-300" title="হোয়াটসঅ্যাপে লিখুন">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </a>
+        <!-- Floating Direct Call -->
+        <a href="tel:+8801766315151" class="w-14 h-14 bg-brandGreen hover:bg-brandGreenDark text-white rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 duration-300 animate-bounce" title="সরাসরি ফোন করুন">
+            <i class="fa-solid fa-phone text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript For Calculators & Navigation -->
+    <script>
+        // Interactive Tab Switching Logic
+        function switchTab(tabId) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('block');
+            });
+
+            // Show active tab content
+            const activeContent = document.getElementById('tab-' + tabId);
+            if (activeContent) {
+                activeContent.classList.remove('hidden');
+                activeContent.classList.add('block');
+            }
+
+            // Remove active classes from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.className = "tab-btn bg-brandGrayLight text-brandBlack hover:bg-brandSilver px-5 py-3 rounded-xl font-bold text-sm transition-all flex items-center space-x-2";
+            });
+
+            // Add active style to selected button
+            const activeBtn = document.getElementById('tab-btn-' + tabId);
+            if (activeBtn) {
+                activeBtn.className = "tab-btn active bg-brandBlack text-white px-5 py-3 rounded-xl font-bold text-sm transition-all flex items-center space-x-2";
+            }
+        }
+
+        // --- CALCULATOR 1: Concrete Mix Estimator ---
+        function calculateConcrete() {
+            const length = parseFloat(document.getElementById('concreteLength').value) || 0;
+            const width = parseFloat(document.getElementById('concreteWidth').value) || 0;
+            const thickness = parseFloat(document.getElementById('concreteThickness').value) || 0;
+
+            if (length <= 0 || width <= 0 || thickness <= 0) {
+                document.getElementById('outCement').textContent = '--';
+                document.getElementById('outSand').textContent = '--';
+                document.getElementById('outChips').textContent = '--';
+                return;
+            }
+
+            // Compute dry volume in CFT (Wet volume * 1.54 safety factor)
+            const wetVolume = (length * width * (thickness / 12));
+            const dryVolume = wetVolume * 1.54;
+
+            // Get selected ratio
+            const selectedRatio = document.querySelector('input[name="concreteRatio"]:checked').value;
+            const parts = selectedRatio.split(':').map(Number);
+            const sumParts = parts[0] + parts[1] + parts[2];
+
+            // Calculate material shares
+            const cementCFT = (parts[0] / sumParts) * dryVolume;
+            const sandCFT = (parts[1] / sumParts) * dryVolume;
+            const chipsCFT = (parts[2] / sumParts) * dryVolume;
+
+            // 1 Bag cement = 1.25 CFT
+            const cementBags = Math.ceil(cementCFT / 1.25);
+
+            // Output values using Bengali localization
+            document.getElementById('outCement').textContent = cementBags.toLocaleString('bn-BD');
+            document.getElementById('outSand').textContent = Math.round(sandCFT).toLocaleString('bn-BD');
+            document.getElementById('outChips').textContent = Math.round(chipsCFT).toLocaleString('bn-BD');
+        }
+
+        // --- CALCULATOR 2: Soil Test & Foundation ---
+        let soilStoriesState = 3;
+        function adjustStories(amount) {
+            soilStoriesState += amount;
+            if (soilStoriesState < 1) soilStoriesState = 1;
+            if (soilStoriesState > 15) soilStoriesState = 15;
+
+            document.getElementById('soilStories').value = soilStoriesState;
+            calculateSoilFoundation();
+        }
+
+        function calculateSoilFoundation() {
+            const soil = document.getElementById('soilType').value;
+            const stories = soilStoriesState;
+
+            let sstText = "";
+            let foundationText = "";
+            let adviceText = "";
+
+            if (soil === 'good') {
+                sstText = "২.৫ - ৩.৫ টন/বর্গফুট (উচ্চ)";
+                if (stories <= 3) {
+                    foundationText = "সাধারণ একক ওপেন ফুটিং";
+                    adviceText = "আপনার জমি বেশ শক্ত। ৩ তলা পর্যন্ত সাধারণ কলাম বেস দিয়েই করা সম্ভব।";
+                } else if (stories <= 6) {
+                    foundationText = "কম্বাইন্ড অথবা র্যাফট ফাউন্ডেশন";
+                    adviceText = "মাটি অনেক ভালো হওয়ায় মাঝারি ভবনের ক্ষেত্রে পাইলিং ছাড়াই করা সম্ভব হতে পারে।";
+                } else {
+                    foundationText = "ডিজিটাল পাইলিং ফাউন্ডেশন";
+                    adviceText = "৬ তলার বেশি বহুতল ভবনের ক্ষেত্রে সয়েল টেস্ট অনুযায়ী শর্ট কাস্ট-ইন-সিটু পাইলিং প্রয়োজন হতে পারে।";
+                }
+            } else if (soil === 'medium') {
+                sstText = "১.৫ - ২.২ টন/বর্গফুট (মাঝারি)";
+                if (stories <= 2) {
+                    foundationText = "সাধারণ চওড়া একক ফুটিং";
+                    adviceText = "সাধারণ ২ তলা ঘর হলে সয়েল টেস্ট ছাড়াই যথাযথ গভীরতায় ফুটিং দিয়ে করা যাবে।";
+                } else if (stories <= 5) {
+                    foundationText = "কম্বাইন্ড / স্ট্র্যাপ ভিম ফুটিং";
+                    adviceText = "কলামের সাইজ ও লোড অনুযায়ী ফুটিং যুক্ত (Combined) আকারে ডিজাইন করতে হবে।";
+                } else {
+                    foundationText = "গভীর প্রাক-কাস্ট / কাস্ট-ইন-সিটু পাইলিং";
+                    adviceText = "৬ তলার বেশি হলে মাটিতে পাইলিং দেওয়া বাধ্যতামূলক যাতে ভূমিকম্পে ক্ষতি না হয়।";
+                }
+            } else {
+                sstText = "০.৫ - ১.২ টন/বর্গফুট (অত্যন্ত দুর্বল)";
+                if (stories <= 2) {
+                    foundationText = "র্যাফড স্ল্যাব / চওড়া কম্বাইন্ড";
+                    adviceText = "মাটি অত্যন্ত নরম। ২ তলার ক্ষেত্রেও খুব সাবধানে র্যাফট ফাউন্ডেশন করতে হবে।";
+                } else {
+                    foundationText = "বাধ্যতামূলক ডিপ পাইলিং (Deep Piling)";
+                    adviceText = "নরম কাদা মাটির উপর ৩ তলার উপরে করতে গেলেই মাটির গভীর থেকে শক্ত পাথর/বালু স্তর পর্যন্ত পাইলিং করতে হবে। সয়েল টেস্ট বাধ্যতামূলক!";
+                }
+            }
+
+            document.getElementById('soilSST').textContent = sstText;
+            document.getElementById('soilFoundationType').textContent = foundationText;
+            document.getElementById('soilAdvice').innerHTML = `<i class="fa-solid fa-circle-info mr-1 text-brandGreen"></i> ${adviceText}`;
+        }
+
+        // --- CALCULATOR 3: Slab Reinforcement (Steel) ---
+        function calculateSlabRod() {
+            const sftArea = parseFloat(document.getElementById('slabArea').value) || 0;
+            const ratio = parseFloat(document.getElementById('rodRatio').value) || 0.012;
+
+            if (sftArea <= 0) {
+                document.getElementById('outRodWeight').textContent = '--';
+                document.getElementById('outRodTons').textContent = '--';
+                return;
+            }
+
+            // Standard slab thickness of 5 inches = 0.416 feet
+            const slabThicknessFt = 5 / 12;
+            const volumeCFT = sftArea * slabThicknessFt;
+
+            // Density of steel = 490 lbs/CFT or ~7850 kg/m3.
+            // Simplified Rule of thumb: Volume of concrete (CFT) * 7850 * percentage of steel * unit factor (1 CFT = 0.0283 m3)
+            // Weight in KG = Volume in CFT * 0.0283 * 7850 * ratio
+            const weightKG = Math.round(volumeCFT * 0.0283 * 7850 * ratio);
+            const tons = (weightKG / 1000).toFixed(2);
+
+            document.getElementById('outRodWeight').textContent = weightKG.toLocaleString('bn-BD');
+            document.getElementById('outRodTons').textContent = parseFloat(tons).toLocaleString('bn-BD');
+        }
+
+        // --- CALCULATOR 4: BNBC Compliance for Lift & Stairs ---
+        function calculateBNBC() {
+            const stories = parseInt(document.getElementById('bnbcStories').value);
+            let stairHTML = "";
+            let liftHTML = "";
+
+            if (stories <= 3) {
+                stairHTML = `
+                    <li>সিঁড়ির নূন্যতম চওড়া হতে হবে <strong>৩ ফুট (০.৯ মিটার)</strong>।</li>
+                    <li>রাইজার (উচ্চতা) সর্বোচ্চ ৭.৫ ইঞ্চি এবং ট্রেড (ধাপ) নূন্যতম ৯ ইঞ্চি রাখা যাবে।</li>
+                    <li>সাধারণ ছোট পরিবারের আবাসিক ব্যবহারের জন্য এটি আদর্শ।</li>
+                `;
+                liftHTML = "৩ তলা পর্যন্ত ভবনে আইনগতভাবে কোন লিফট রাখার বাধ্যবাধকতা নেই।";
+            } else if (stories <= 5) {
+                stairHTML = `
+                    <li>সিঁড়ির নূন্যতম চওড়া হতে হবে <strong>৩ ফুট ৪ ইঞ্চি (১.০ মিটার)</strong>।</li>
+                    <li>ধাপের রাইজার সর্বোচ্চ ৭ ইঞ্চি এবং ট্রেড নূন্যতম ১০ ইঞ্চি নিশ্চিত করা উচিত।</li>
+                    <li>দুর্ঘটনা এড়াতে সিঁড়িতে পর্যাপ্ত আলোর ব্যবস্থা থাকতে হবে।</li>
+                `;
+                liftHTML = "৪ ও ৫ তলা ভবনের ক্ষেত্রে লিফট বাধ্যতামূলক নয়, তবে বয়স্ক মানুষদের যাতায়াতের সুবিধার্থে লিফট প্রোভিশন রাখা ভালো।";
+            } else {
+                stairHTML = `
+                    <li>সিঁড়ির নূন্যতম চওড়া হতে হবে <strong>৩ ফুট ৮ ইঞ্চি (১.১ মিটার)</strong> যাতে জরুরি প্রয়োজনে ফায়ার সার্ভিস সহজে ব্যবহার করতে পারে।</li>
+                    <li>ধাপের রাইজার সর্বোচ্চ ৬.৫ ইঞ্চি এবং ট্রেড নূন্যতম ১০ ইঞ্চি হতে হবে।</li>
+                    <li>বহুতল ভবনে সিঁড়ির ল্যান্ডিং চওড়া হতে হবে।</li>
+                `;
+                liftHTML = "<strong>BNBC নিয়ম অনুযায়ী ৬ তলা বা এর বেশি বহুতল ভবনে লিফট স্থাপন করা আইনগতভাবে বাধ্যতামূলক।</strong> অন্তত একটি প্যাসেঞ্জার লিফট অবশ্যই ড্রয়িংয়ে অন্তর্ভুক্ত করতে হবে।";
+            }
+
+            document.getElementById('bnbcStairRules').innerHTML = stairHTML;
+            document.getElementById('bnbcLiftRules').innerHTML = liftHTML;
+        }
+
+        // --- INTERACTIVE FAQ ACCORDION LOGIC ---
+        function toggleFAQ(id) {
+            const answer = document.getElementById('faq-ans-' + id);
+            const icon = document.getElementById('faq-icon-' + id);
+            
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                answer.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Initialize calculators on window load
+        window.onload = function() {
+            calculateConcrete();
+            calculateSoilFoundation();
+            calculateSlabRod();
+            calculateBNBC();
+        };
+    </script>
+</body>
+</html>
